@@ -1,0 +1,39 @@
+{% extends 'seller_temp/seller_home.html' %}
+{% load static %}
+
+{% block nav_list %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'seller:addproduct' %}">Add Product</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'seller:profile' %}">Profile</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'seller:changePassword' %}">Change Password</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'seller:editProfile' %}">Edit Profile</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'seller:logout' %}">Log out</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+{% for products in products %}
+{{products.P_Name}}
+{{products.P_Price}}
+{% endfor %}
+
+{% endblock %}
+
+
+  
+
+
+
+
+
+
+

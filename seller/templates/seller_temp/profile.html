@@ -1,0 +1,53 @@
+{% extends 'seller_temp/seller_home.html' %}
+{% load static %}
+
+{% block nav_list %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:addproduct' %}">Add Product</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:myProducts' %}">View Products</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:changePassword' %}">Change Password</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:editProfile' %}">Edit Profile</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:logout' %}">Log out</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin-top: 20px;">Profile</h1>
+<table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">Company Name</th>
+        <td>{{ seller_details.name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td>{{ seller_details.email}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Phone No</th>
+        <td>{{ seller_details.phone}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Address</th>
+        <td>{{ seller_details.address}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Holder Name</th>
+        <td>{{ seller_details.holder_name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Profile photo</th>
+        <td>{{ seller_details.photo}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

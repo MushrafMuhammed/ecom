@@ -1,0 +1,12 @@
+{% extends 'customer_temp/master.html' %}
+{% load static %}
+
+{% block content %}
+
+<h3>Profile</h3>
+
+<h5>Name: {{ user_details.name }}</h5>
+<h5>Email: {{ user_details.email }}</h5>
+<h5>Mobile: {{ user_details.phone }}</h5>
+
+{% endblock %}

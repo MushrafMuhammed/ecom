@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>master</title>
+    {% endblock %}
+
+
+    <link rel="stylesheet" href="{% static 'style/master.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- for icons -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block header %}
+
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <!-- Nav start -->
+    <div class="overlay"></div>
+
+    <div class="utility-nav d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <p class="small"><i class="bx bx-envelope"></i> logo@outlook.com | <i class="bx bx-phone"></i>
+                        +91-9946649401
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-6 text-right">
+                    <p class="small">Free shipping for all products</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+        <div class="container">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
+                <i class="bx bx-menu icon-single"></i>
+            </button>
+
+            <a class="navbar-brand" href="#">
+                <h4 class="font-weight-bold">Logo</h4>
+            </a>
+
+            <ul class="navbar-nav ml-auto d-block d-md-none">
+                <li class="nav-item">
+                    <a class="btn btn-link" href="#"><i class="fa fa-search icon-single"></i> <span
+                            class="badge badge-danger">3</span></a>
+                </li>
+            </ul>
+
+            <div class="collapse navbar-collapse">
+                <form class="form-inline my-2 my-lg-0 mx-auto">
+                    <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
+                </form>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span
+                                class="badge badge-danger">3</span></a>
+                    </li>
+                    <li class="nav-item ml-md-3">
+    
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-bs-whatever="@mdo">Log In / Register</button>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- start modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <div class="modal-body justify-content-center">
+    
+                    <div class="form-check d-flex">
+                        <button type="button" class="btn btn-info cus-btn" style="font-size: 10px; width: 150px;
+                        height: 100px;"> <a href="{% url 'customer:login' %}">Customer</a> </button>
+                    </div>
+                    <div class="form-check d-flex">
+                        <button type="button" class="btn btn-info cus-btn" style="font-size: 10px; width: 150px;
+                        height: 100px;"><a href="{% url 'seller:login' %}"> Seller</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Schools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Publishers</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Support
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Delivery Information</a>
+                            <a class="dropdown-item" href="#">Privacy Policy</a>
+                            <a class="dropdown-item" href="#">Terms & Conditions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search-bar d-block d-md-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form class="form-inline mb-3 mx-auto">
+                        <input class="form-control" type="search" placeholder="Search for products..."
+                            aria-label="Search">
+                        <button class="btn btn-success" type="submit"><i class="bx bx-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end nav -->
+
+
+
+    {% endblock %}
+
+    <script src="{% static 'js/master.js' %}"></script> <!--Lc js-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+    </script>
+</body>
+
+</html>

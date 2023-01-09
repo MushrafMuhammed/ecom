@@ -1,0 +1,33 @@
+{% extends 'seller_temp/seller_home.html' %}
+{% load static %}
+
+{% block nav_list %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:addproduct' %}">Add Product</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:profile' %}">Profile</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:myProducts' %}">View Products</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:changePassword' %}">Change Password</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:editProfile' %}">Edit Profile</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'seller:logout' %}">Log out</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<div class="row" style="background-color: #f9f5ed;">
+    <div class="align-items-center">
+        {% comment %} <img src="https://www.pngkey.com/png/full/774-7748560_ecommerce-benefits-e-commerce-economics.png" > {% endcomment %}
+        <h1 style="text-align: center; margin-top: 20px;">Seller Home</h1>
+    </div>
+    
+</div>
+{% endblock %}
